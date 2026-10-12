@@ -1,0 +1,21 @@
+.advantages-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.advantage-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 28px 24px;
+  text-align: center;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
+}
+.advantage-card__title {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+.advantage-card__text {
+  font-size: 14px;
+  color: #6b7280;
+}

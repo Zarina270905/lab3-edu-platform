@@ -1,0 +1,101 @@
+.home__lecturers {
+  padding-top: 60px;
+}
+
+.discipline-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 28px;
+}
+
+.discipline-tags__label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+  margin-right: 4px;
+}
+
+.discipline-tag {
+  padding: 8px 16px;
+  border-radius: 20px;
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  font-size: 13px;
+  color: #4b5563;
+  font-weight: 500;
+  transition: all 0.2s;
+  cursor: pointer;
+  font-family: inherit;
+}
+
+.discipline-tag:hover {
+  border-color: #2563eb;
+  color: #2563eb;
+  transform: translateY(-1px);
+}
+
+.discipline-tag--active {
+  background: #2563eb;
+  color: #fff;
+  border-color: #2563eb;
+}
+
+.teachers-search {
+  position: relative;
+  margin: 0 auto 40px;
+  max-width: 500px;
+}
+
+.teachers-search input {
+  width: 100%;
+  padding: 14px 44px 14px 18px;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  font-size: 15px;
+  font-family: inherit;
+  background: #fff;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.teachers-search input:focus {
+  outline: none;
+  border-color: #2563eb;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.teachers-search__clear {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #f3f4f6;
+  color: #6b7280;
+  font-size: 18px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.teachers-search__clear:hover {
+  background: #e5e7eb;
+  color: #111827;
+}
+
+.teachers-empty {
+  text-align: center;
+  color: #6b7280;
+  font-size: 15px;
+  padding: 40px 20px;
+  background: #f9fafb;
+  border-radius: 12px;
+}

@@ -1,0 +1,56 @@
+.partners-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+}
+
+.partner {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* Кликабельный блок логотипа */
+.partner__logo-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 0.2s;
+}
+
+.partner__logo-row:hover {
+  opacity: 0.85;
+}
+
+.partner__logo {
+  height: 70px;
+  max-width: 240px;
+  object-fit: contain;
+}
+
+.partner__arrow {
+  font-size: 46px;
+  font-weight: 700;
+  color: #111827;
+  line-height: 1;
+  transition: transform 0.2s;
+}
+
+.partner__logo-row:hover .partner__arrow {
+  transform: translate(4px, -4px);
+}
+
+.partner__text {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #374151;
+}
+
+@media (max-width: 820px) {
+  .partners-grid {
+    grid-template-columns: 1fr;
+  }
+}
