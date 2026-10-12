@@ -7,7 +7,6 @@ import TeacherList from '../../components/TeacherList/TeacherList.jsx';
 export default function HomePage({ teachers, navigate }) {
   const [query, setQuery] = useState('');
 
-  // Собираем все уникальные дисциплины
   const allDisciplines = [];
   const seen = new Set();
   teachers.forEach((t) => {
@@ -19,7 +18,6 @@ export default function HomePage({ teachers, navigate }) {
     });
   });
 
-  // Показываем первые 8 дисциплин как «популярные»
   const popularDisciplines = allDisciplines.slice(0, 8);
 
   const filtered = teachers.filter((t) => {
@@ -34,7 +32,7 @@ export default function HomePage({ teachers, navigate }) {
     <>
       <Hero navigate={navigate} />
 
-      <section className="section home__lecturers">
+      <section id="lecturers" className="section home__lecturers">
         <div className="container">
 
           <div className="teachers-header">
@@ -44,7 +42,6 @@ export default function HomePage({ teachers, navigate }) {
             </p>
           </div>
 
-          {/* Популярные дисциплины */}
           <div className="discipline-tags">
             <span className="discipline-tags__label">Популярные:</span>
             {popularDisciplines.map((title, i) => (

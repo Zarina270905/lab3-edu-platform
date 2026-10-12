@@ -6,10 +6,28 @@ export default function Header({ currentPage, navigate }) {
     { path: '/disciplines', label: 'Дисциплины', key: 'disciplines' },
     { path: '/partners', label: 'Партнеры', key: 'partners' },
     { path: '/about', label: 'О нас', key: 'about' },
-    { path: '/teachers', label: 'Лекторы', key: 'teachers' },
+    { path: '/teachers', label: 'Лекторы', key: 'teachers', anchor: 'lecturers' },
   ];
 
-  const handleClick = (path) => {
+  const handleClick = (path, anchor) => {
+    if (anchor) {
+      // Если уже на главной — просто скроллим
+      if (window.location.hash === '' || window.location.hash === '#/' || window.location.hash === '#') {
+        const el = document.getElementById(anchor);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          return;
+        }
+      }
+      navigate('/');
+      setTimeout(() => {
+        const el = document.getElementById(anchor);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      }, 100);
+      return;
+    }
     navigate(path);
   };
 
@@ -29,7 +47,7 @@ export default function Header({ currentPage, navigate }) {
               }`}
               onClick={(e) => {
                 e.preventDefault();
-                handleClick(link.path);
+                handleClick(link.path, link.anchor);
               }}
             >
               {link.label}
