@@ -1,16 +1,110 @@
-# React + Vite
+# Учебная платформа — Лекторы и дисциплины
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Учебный проект на React + Vite. Платформа для подбора лекторов
+и дисциплин: онлайн и офлайн обучение для физических и юридических лиц.
 
-Currently, two official plugins are available:
+## Стек и версии
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+| Технология | Версия |
+|---|---|
+| Node.js | v24.21.0 |
+| npm | v11.19.0 |
+| React | ^19.2.0 |
+| React DOM | ^19.2.0 |
+| Vite | ^8.3.1 |
+| ESLint | ^9.39.1 |
 
-## React Compiler
+Сторонние библиотеки не используются — только React и Vite.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Команды для установки и запуска
 
-## Expanding the ESLint configuration
+Установка зависимостей:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+    npm install
+
+Запуск dev-сервера:
+
+    npm run dev
+
+Сайт откроется по адресу: http://localhost:5173
+
+Сборка production-версии:
+
+    npm run build
+    npm run preview
+
+Проверка кода линтером:
+
+    npm run lint
+
+## Структура папок
+
+    LAB3/
+    ├── public/                     Публичные файлы (favicon)
+    ├── src/
+    │   ├── assets/                 Изображения (фото лекторов, логотипы)
+    │   ├── components/             React-компоненты (каждый в своей папке)
+    │   │   ├── Advantages/         Блок «Почему выбирают нас»
+    │   │   ├── ContactForm/        Форма обратной связи
+    │   │   ├── FAQ/                Частые вопросы
+    │   │   ├── Footer/             Подвал сайта
+    │   │   ├── Header/             Шапка с навигацией
+    │   │   ├── Hero/               Главный баннер
+    │   │   ├── Partners/           Блок партнёров
+    │   │   ├── Reviews/            Отзывы
+    │   │   ├── TeacherCard/        Карточка лектора
+    │   │   └── TeacherList/        Список лекторов
+    │   ├── data/                   Данные приложения
+    │   │   ├── teachers.js         Массив лекторов, отзывы, FAQ
+    │   │   └── partners.js         Массив партнёров
+    │   ├── pages/                  Страницы сайта
+    │   │   ├── AboutPage/          О нас
+    │   │   ├── ContactsPage/       Контакты
+    │   │   ├── DisciplineDetailPage/  Конкретная дисциплина
+    │   │   ├── DisciplinesPage/    Все дисциплины
+    │   │   ├── HomePage/           Главная
+    │   │   ├── PartnersPage/       Партнёры
+    │   │   ├── TeacherDetailPage/  Детальная страница лектора
+    │   │   └── TeachersPage/       Все лекторы
+    │   ├── App.jsx                 Корневой компонент + роутинг
+    │   ├── index.css               Глобальные стили
+    │   └── main.jsx                Точка входа
+    ├── index.html
+    ├── package.json
+    ├── vite.config.js
+    └── README.md
+
+## Где лежат данные и роутинг
+
+### Данные
+
+Все данные находятся в папке src/data/.
+
+- src/data/teachers.js — массив teachers из 10 лекторов
+  (5 мужчин и 5 женщин). У каждого: id, name, education,
+  experience, degree, photo, subjects (дисциплины и уроки),
+  tariffs (тарифы). Также экспортируются reviews и faq.
+- src/data/partners.js — массив partners (ICL, TATNEFT).
+  У каждой компании: id, name, logo, url, description.
+
+Изображения хранятся в src/assets/ и импортируются
+в компоненты через import.
+
+### Роутинг
+
+Роутинг реализован вручную через window.location.hash
+(без react-router). Вся логика находится в файле src/App.jsx.
+
+| URL (hash) | Страница |
+|---|---|
+| #/ | Главная |
+| #/teachers | Все лекторы |
+| #/teachers/:id | Конкретный лектор |
+| #/disciplines | Все дисциплины |
+| #/disciplines/:title | Конкретная дисциплина |
+| #/partners | Партнёры |
+| #/about | О нас |
+| #/contacts | Контакты |
+
+При изменении hash компонент App слушает событие hashchange
+и рендерит нужную страницу.
