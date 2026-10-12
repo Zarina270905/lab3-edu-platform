@@ -10,7 +10,6 @@ export default function TeacherDetailPage({ teacher, navigate }) {
             className="back-link"
             onClick={() => navigate('/teachers')}
           >
-            ← Назад к списку
           </button>
         </div>
       </section>
