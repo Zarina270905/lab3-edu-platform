@@ -57,21 +57,15 @@ export default function TeacherDetailPage({ teacher, navigate }) {
             {teacher.degree !== 'нет' && (
               <div className="degree">{teacher.degree}</div>
             )}
-            <p>
-              <strong>Образование:</strong> {teacher.education}
-            </p>
-            <p>
-              <strong>Стаж:</strong> {teacher.experience} лет
-            </p>
+            <p><strong>Образование:</strong> {teacher.education}</p>
+            <p><strong>Стаж:</strong> {teacher.experience} лет</p>
             <div className="subjects">
               {teacher.subjects.map((s, i) => (
-                <span className="tag" key={i}>
-                  {s.title}
-                </span>
+                <span className="tag" key={i}>{s.title}</span>
               ))}
             </div>
 
-            {/* Кнопка «Записаться» на детальной странице */}
+            {/* Обычная кнопка рядом с именем — НЕ увеличиваем */}
             <button
               className="detail-signup-btn"
               onClick={() => navigate('/contacts')}
@@ -104,10 +98,9 @@ export default function TeacherDetailPage({ teacher, navigate }) {
           ))}
         </div>
 
-        {/* Кнопка «Записаться» внизу страницы */}
         <div className="detail-signup-bottom">
           <button
-            className="detail-signup-btn"
+            className="detail-signup-btn detail-signup-btn--big"
             onClick={() => navigate('/contacts')}
           >
             Записаться на курс

@@ -140,6 +140,7 @@
   font-weight: 700;
   color: #2563eb;
 }
+/* Обычная кнопка (рядом с именем) — как было */
 .detail-signup-btn {
   margin-top: 20px;
   display: inline-block;
@@ -156,6 +157,27 @@
 
 .detail-signup-btn:hover {
   background: #15803d;
+}
+
+/* Большая кнопка под тарифами */
+.detail-signup-btn--big {
+  padding: 18px 48px;
+  border-radius: 12px;
+  font-size: 17px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.25);
+  transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+}
+
+.detail-signup-btn--big:hover {
+  background: #15803d;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(22, 163, 74, 0.35);
+}
+
+.detail-signup-btn--big:active {
+  transform: translateY(0);
 }
 
 .detail-signup-bottom {
