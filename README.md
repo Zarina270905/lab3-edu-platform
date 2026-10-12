@@ -43,20 +43,26 @@
     ├── public/                     Публичные файлы (favicon)
     ├── src/
     │   ├── assets/                 Изображения (фото лекторов, логотипы)
+    │   │   ├── hero.png
+    │   │   ├── icl.jpg
+    │   │   ├── tatneft.jpg
+    │   │   ├── man1.png … man5.png
+    │   │   └── woman1.png … woman5.png
+    │   │
     │   ├── components/             React-компоненты (каждый в своей папке)
     │   │   ├── Advantages/         Блок «Почему выбирают нас»
     │   │   ├── ContactForm/        Форма обратной связи
-    │   │   ├── FAQ/                Частые вопросы
     │   │   ├── Footer/             Подвал сайта
     │   │   ├── Header/             Шапка с навигацией
     │   │   ├── Hero/               Главный баннер
     │   │   ├── Partners/           Блок партнёров
-    │   │   ├── Reviews/            Отзывы
     │   │   ├── TeacherCard/        Карточка лектора
     │   │   └── TeacherList/        Список лекторов
+    │   │
     │   ├── data/                   Данные приложения
-    │   │   ├── teachers.js         Массив лекторов, отзывы, FAQ
+    │   │   ├── teachers.js         Массив лекторов
     │   │   └── partners.js         Массив партнёров
+    │   │
     │   ├── pages/                  Страницы сайта
     │   │   ├── AboutPage/          О нас
     │   │   ├── ContactsPage/       Контакты
@@ -66,14 +72,16 @@
     │   │   ├── PartnersPage/       Партнёры
     │   │   ├── TeacherDetailPage/  Детальная страница лектора
     │   │   └── TeachersPage/       Все лекторы
+    │   │
     │   ├── App.jsx                 Корневой компонент + роутинг
     │   ├── index.css               Глобальные стили
     │   └── main.jsx                Точка входа
+    │
     ├── index.html
     ├── package.json
     ├── vite.config.js
     └── README.md
-
+    
 ## Где лежат данные и роутинг
 
 ### Данные
