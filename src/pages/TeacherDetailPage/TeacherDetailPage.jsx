@@ -1,4 +1,5 @@
 import './TeacherDetailPage.css';
+import Tooltip from '../../components/Tooltip/Tooltip.jsx';
 
 export default function TeacherDetailPage({ teacher, navigate }) {
   if (!teacher) {
@@ -53,11 +54,30 @@ export default function TeacherDetailPage({ teacher, navigate }) {
           </div>
           <div className="detail-info">
             <h1>{teacher.name}</h1>
+            
             {teacher.degree !== 'нет' && (
-              <div className="degree">{teacher.degree}</div>
+              <div className="degree">
+                <Tooltip text="Научная степень, подтверждённая диссертационным советом">
+                  {teacher.degree}
+                </Tooltip>
+              </div>
             )}
             <p><strong>Образование:</strong> {teacher.education}</p>
-            <p><strong>Стаж:</strong> {teacher.experience} лет</p>
+            <p>
+              <strong>Стаж:</strong>{' '}
+              <Tooltip text={`Опыт преподавания и работы по специальности — ${teacher.experience} лет`}>
+                {teacher.experience} лет
+              </Tooltip>
+            </p>           
+
+
+
+        
+
+
+
+
+
             <div className="subjects">
               {teacher.subjects.map((s, i) => (
                 <span className="tag" key={i}>{s.title}</span>
