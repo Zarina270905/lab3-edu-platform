@@ -55,18 +55,6 @@ export default function TeacherCard({ teacher, navigate }) {
         </p>      
 
 
-        {teacher.degree !== 'нет' && (
-          <p className="teacher-card__meta">
-            <strong>Учёная степень:</strong> {teacher.degree}
-          </p>
-        )}
-        <p className="teacher-card__meta">
-          <strong>Образование:</strong> {teacher.education}
-        </p>
-        <p className="teacher-card__meta">
-          <strong>Стаж:</strong> {teacher.experience} лет
-        </p>
-
 
 
 

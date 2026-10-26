@@ -65,7 +65,7 @@ export default function TeacherDetailPage({ teacher, navigate }) {
             <p><strong>Образование:</strong> {teacher.education}</p>
             <p>
               <strong>Стаж:</strong>{' '}
-              <Tooltip text={`Опыт преподавания и работы по специальности — ${teacher.experience} лет`}>
+              <Tooltip text={`Опыт преподавания и работы по специальности - ${teacher.experience} лет`}>
                 {teacher.experience} лет
               </Tooltip>
             </p>           
