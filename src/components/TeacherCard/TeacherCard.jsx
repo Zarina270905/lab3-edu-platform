@@ -1,4 +1,5 @@
 import './TeacherCard.css';
+import Tooltip from '../Tooltip/Tooltip.jsx';
 
 export default function TeacherCard({ teacher, navigate }) {
   const initials = teacher.name
@@ -34,17 +35,29 @@ export default function TeacherCard({ teacher, navigate }) {
 
       <div className="teacher-card__info">
         <h3 className="teacher-card__name">{teacher.name}</h3>
+        
         {teacher.degree !== 'нет' && (
           <p className="teacher-card__meta">
-            <strong>Учёная степень:</strong> {teacher.degree}
+            <strong>Учёная степень:</strong>{' '}
+            <Tooltip text="Научная степень, подтверждённая диссертационным советом">
+              {teacher.degree}
+            </Tooltip>
           </p>
         )}
         <p className="teacher-card__meta">
           <strong>Образование:</strong> {teacher.education}
         </p>
         <p className="teacher-card__meta">
-          <strong>Стаж:</strong> {teacher.experience} лет
-        </p>
+          <strong>Стаж:</strong>{' '}
+          <Tooltip text={`Опыт преподавания и работы по специальности — ${teacher.experience} лет`}>
+            {teacher.experience} лет
+          </Tooltip>
+        </p>      
+
+
+
+
+
 
         <div className="teacher-card__subjects">
           {teacher.subjects.map((s, i) => (
